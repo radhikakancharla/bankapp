@@ -1,0 +1,26 @@
+<h1 class ="display-4">Bank accounts</h1>
+<table class="table table-striped">
+    <thead class ="thead-inverse">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>Flags</th>
+            <th>Suspended?</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |t| %>
+       <tr>
+            <td><%=t.id %></td>
+            <td><%=t.name %></td>
+            <td><%=t.category %></td>
+            <td><%=number_to_currency t.balance %></td>
+            <td><%=t.flags %></td>
+            <td><%=t.is_suspended %></td>
+        </tr>
+        <% end %>
+        
+    </tbody>
+</table>
